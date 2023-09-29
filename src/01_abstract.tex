@@ -1,0 +1,11 @@
+Robust lane detection in real-time is one of the foundations for advanced autonomous driving,
+which can provide substantial amounts of useful information for Autonomous Driving Systems (ADS), vehicle self-control, localization, and map construction.
+Since the in/extrinsic parameters of different vehicles are various which has a significant impact on the results of 3D lanes,
+we introduce the Virtual Camera that unifies the in/extrinsic parameters of cameras mounted on
+different vehicles to guarantee the consistency of the spatial relationship among cameras.
+It can effectively promote the learning procedure due to the unified visual space.
+Different from the method of using fixed intrinsic parameters and extrinsic parameters to transformer front-view images to virtual images,
+we train a network, termed HNet, that estimates the parameters of an ideal perspective transformation, conditioned on the input image.
+In order to train FVHNet for outputting the transformation matrix that is optimal for perspective transformation, we construct a loss function referred FVHLoss.
+In summary, we propose a model which can unify the in/extrinsic parameters of different vehicles.
+We verify our method on the OpenLane dataset and achieve competitive results.

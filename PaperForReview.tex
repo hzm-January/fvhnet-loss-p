@@ -1,0 +1,87 @@
+% CVPR 2022 Paper Template
+% based on the CVPR template provided by Ming-Ming Cheng (https://github.com/MCG-NKU/CVPR_Template)
+% modified and extended by Stefan Roth (stefan.roth@NOSPAMtu-darmstadt.de)
+
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+%%%%%%%%% PAPER TYPE  - PLEASE UPDATE FOR FINAL VERSION
+% \usepackage[review]{cvpr}      % To produce the REVIEW version
+%\usepackage{package/IEEE}              % To produce the CAMERA-READY version
+\usepackage{package/cvpr}              % To produce the CAMERA-READY version
+%\usepackage[pagenumbers]{cvpr} % To force page numbers, e.g. for an arXiv version
+
+% Include other packages here, before hyperref.
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{multirow}
+
+% It is strongly recommended to use hyperref, especially for the review version.
+% hyperref with option pagebackref eases the reviewers' job.
+% Please disable hyperref *only* if you encounter grave issues, e.g. with the
+% file validation for the camera-ready version.
+%
+% If you comment hyperref and then uncomment it, you should delete
+% ReviewTempalte.aux before re-running LaTeX.
+% (Or just hit 'q' on the first LaTeX run, let it finish, and you
+%  should be clear).
+\usepackage[pagebackref,breaklinks,colorlinks]{hyperref}
+
+
+% Support for easy cross-referencing
+\usepackage[capitalize]{cleveref}
+\crefname{section}{Sec.}{Secs.}
+\Crefname{section}{Section}{Sections}
+\Crefname{table}{Table}{Tables}
+\crefname{table}{Tab.}{Tabs.}
+
+%%%%%%%%% PAPER ID  - PLEASE UPDATE
+% \def\cvprPaperID{*****} % *** Enter the CVPR Paper ID here
+% \def\confName{CVPR}
+% \def\confYear{2022}
+
+
+\begin{document}
+
+%%%%%%%%% TITLE - PLEASE UPDATE
+\title{A Fast Lane Detection Method Based on Single View Virtual Plane}
+
+\author{Zhiming Hou, Yuanzhouhan Cao, Jing Ye}
+%-------------------------------------------------------------------------
+\maketitle
+
+%%%%%%%%% ABSTRACT
+\begin{abstract}
+  \input{src/01_abstract.tex}
+\end{abstract}
+
+%%%%%%%%% INTRODUCTION
+\input{src/02_introduction.tex}
+
+%%%%%%%%% RELATED_WORK
+\input{src/03_related_work.tex}
+
+%%%%%%%%% METHODS
+\input{src/04_methods.tex}
+
+%%%%%%%%% EXPRIMENTS
+\input{src/05_expriments.tex}
+
+%%%%%%%%% CONCLUSIONS
+\input{src/06_conclusions.tex}
+%-------------------------------------------------------------------------
+
+%%%%%%%%% REFERENCES
+{
+  \small
+  \bibliographystyle{package/ieee_fullname}
+  \bibliography{package/egbib}
+}
+\clearpage
+%-------------------------------------------------------------------------
+%%%%%%%%% APPENDIX
+%\input{src/07_appendix.tex}
+
+\end{document}
