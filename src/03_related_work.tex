@@ -5,42 +5,47 @@
 \label{subsec:2d}
 %anchor3d
 
-2D lane detection~\cite{chen2023improving, jin2022eigenlanes, liu2021end, pan2018spatial, tabelini2021polylanenet, yang2023lane} aims at obtaining the accurate shape and locations of lanes in the images, and is not conccerned with the spatial extension of the lane line.
-Earlier works~\cite{aly2008real, he2004color, kim2008robust, wang2004lane, zhou2010novel, srivastava2014improved, chanawangsa2012new} mainly focus on extracting low-level handcrafted features, such as edge and color information.
-However, these approaches often have complex feature extraction and post-processing designs and are less robust under changing scenarios.
-In recent years, with the development of deep learning, CNN-based methods have been achieved significant advancements in the field of 2D lane detection.
-These works are divided into four categories according to pixel-wise segmentation, keypoint-based  methods, curve parameters, anchor-based methods.
+2D lane detection~\cite{chen2023improving, jin2022eigenlanes, liu2021end, pan2018spatial, tabelini2021polylanenet, yang2023lane}
+aims at obtaining the accurate shape and locations of lanes in the images, which is not concerned with the spatial extension of the lane line.
+Earlier works~\cite{aly2008real, he2004color, kim2008robust, wang2004lane, zhou2010novel, srivastava2014improved, chanawangsa2012new}
+mainly focus on extracting low-level handcrafted features, such as edge and color information.
+However, these approaches are less robust under changing scenarios and often have complex feature extraction and post-processing designs.
+Benefiting from deep learning, 2D lane detection has made significant progress.
+These works are divided into four categories according to segmentation-based methods, keypoint-based methods, curve-based parameters, anchor-based methods.
 
-\textbf{Segmentation based methods}~\cite{hou2019learning, neven2018towards, pan2018spatial, qin2020ultra, dong2023hybrid, lee2023end} formulate 2D lane detection task as a per-pixel classification problem and typically focus on how to explore more effective and semantically informative features.
-To make predictions more sparse and flexible, which the computing cost is expensive.
+\textbf{Segmentation-based methods}~\cite{hou2019learning, neven2018towards, pan2018spatial, qin2020ultra, dong2023hybrid, lee2023end}
+formulate 2D lane detection task as a pixel-wise classification problem, which the computing cost is expensive.
 
-\textbf{Keypoint-based methods}~\cite{ko2021key, qu2021focus, wang2022keypoint, xu2022rclane} focus on identifying and localizing specific keypoints or landmarks along lane boundaries in images or videos.
-These methods aim to simplify the lane detection process by directly detecting key features that represent the lanes.
-While keypoint-based methods can be efficient, they may face challenges in scenarios where keypoints are not well-defined or when there is significant noise or clutter in the image.
-Additionally, accurately identifying keypoints in varying environmental conditions can be a demanding task.
+\textbf{Keypoint-based methods}~\cite{ko2021key, qu2021focus, wang2022keypoint, xu2022rclane}
+focus on identifying and localizing specific key points or landmarks along lane boundaries in images or videos.
+These methods aim to simplify the lane detection process by directly detecting key features of the lanes.
+While keypoint-based methods can be efficient, they may face challenges in scenarios where key points are not well-defined or when there is significant noise or clutter in the image.
+Additionally, accurately identifying key points in varying environmental conditions can be a demanding task.
 
-\textbf{Curve parameters}~\cite{feng2022rethinking, tabelini2021polylanenet, chen2023improving} focus on identifying and characterizing lane boundaries using mathematical curve representations.
+\textbf{Curve-based methods}~\cite{feng2022rethinking, tabelini2021polylanenet, chen2023improving} focus on identifying and characterizing lane boundaries using mathematical curve representations.
 These methods aim to model the lanes as curves, such as quadratic or cubic functions, and estimate the parameters of these curves to accurately detect and localize the lanes.
-So it is proposed that the 2D lane detection can be converted into the problem of curve parameter regression by detecting the starting point, ending point, and curve parameters.
+These works proposed that the 2D lane detection can be converted into the problem of curve parameter regression by detecting the starting point, ending point, and curve parameters.
 
-Apart from the above methods, \textbf{anchor-based methods}~\cite{li2019line, liu2021condlanenet, tabelini2021keep, zheng2022clrnet, ran2023flamnet, huang2023anchor3dlane} design line-like anchors and estimate the offsets between sampled points and predefined anchor points, making them particularly suitable for scenarios with distinct lane patterns.
+\textbf{anchor-based methods}~\cite{li2019line, liu2021condlanenet, tabelini2021keep, zheng2022clrnet, ran2023flamnet, huang2023anchor3dlane} design line-like anchors and estimate the offsets between sampled points and predefined anchor points, making them particularly suitable for scenarios with distinct lane patterns.
 Non-Maximum Suppression (NMS) is then employed to select the lane lines with the highest confidence.
 LineCNN~\cite{li2019line} first defines straight rays emitted from the image boundary to fit the shape of 2D lane lines and applies Non-Maximum Suppression (NMS) to keep only lanes with higher confidence.
 LaneATT~\cite{tabelini2021keep} proposes an anchor-based pooling method and an attention mechanism to aggregate more global information.
 CLRNet~\cite{zheng2022clrnet} learns to refine the initial anchors iteratively through the feature pyramid.
 
-
 \subsection{3D Lane Detection}
 \label{subsec:3d}
-Since projecting 2D lanes back into 3D space suffers from inaccuracy as well as less robustness, many researchers have turned their attention to lane detection in 3D space.
-Unlike traditional 2D methods that operate solely in the image plane, 3D lane detection leverages depth information to provide a more comprehensive understanding of the road environment, enabling vehicles to perceive and navigate lanes in real-world scenarios with varying terrains, elevation changes, and complex road geometries.
+Since projecting 2D lanes into 3D space suffers from inaccuracy as well as less robustness, many researchers have turned their attention to lane detection in 3D space.
+Unlike traditional 2D methods that operate solely in the image plane, 3D lane detection leverages depth information to provide a more comprehensive understanding of the road environment,
+enabling vehicles to perceive and navigate lanes in real-world scenarios with varying terrains, elevation changes, and complex road geometries.
 
 Some works restore 3D information using multiple sensor~\cite{cordts2016cityscapes, luo2022m, chen2022persformer}.
-While 3D lane detection offers significant advantages, it also comes with challenges such as computational complexity, sensor calibration and the collection and annotation cost of multisensor data is expensive.
+While 3D lane detection offers significant advantages, it also comes with challenges such as computational complexity,
+sensor calibration and the collection and annotation cost of multisensor data is expensive.
 Therefore, monocular camera image based 3D lane detection~\cite{efrat20203d, garnett20193d, guo2020gen, liu2022learning, yan2022once, huang2023anchor3dlane, wang2023bev} attracts more attention.
 
 Due to the good geometric properties of lanes in the perspective of BEV, \textbf{3DLaneNet}~\cite{garnett20193d} predict the position of lanes in 3D space.
-It utilizes an Inverse Perspective Mapping (IPM) technique to transform features from a front-view image into a Bird's Eye View (BEV) representation, where the geometric properties of lanes are more easily discernible.
+It utilizes an Inverse Perspective Mapping (IPM) technique to transform features from a front-view image into a Bird's Eye View (BEV) representation,
+where the geometric properties of lanes are more easily discernible.
 By regressing the anchor offsets in the BEV space, 3DLaneNet can accurately predict the position of lanes without relying on the assumption of a flat ground.
 \textbf{Gen-LaneNet}~\cite{guo2020gen} improves the alignment between the virtual top view generated by an inverse perspective mapping (IPM) and the true top view in 3D space.
 By distinguishing between these views, Gen-LaneNet enhances the accuracy of lane detection without the need for a bird's-eye view (BEV) transformation.

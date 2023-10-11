@@ -1,0 +1,644 @@
+%region 2D lane detection
+
+@article{ran2023flamnet,
+    title = {FLAMNet: A Flexible Line Anchor Mechanism Network for Lane Detection},
+    author = {Ran, Hao and Yin, Yunfei and Huang, Faliang and Bao, Xianjian},
+    journal = {IEEE Transactions on Intelligent Transportation Systems},
+    year = {2023},
+    publisher = {IEEE}
+}
+
+@article{lee2023end,
+    title = {End-to-end deep learning of lane detection and path prediction for real-time autonomous driving},
+    author = {Lee, Der-Hau and Liu, Jinn-Liang},
+    journal = {Signal, Image and Video Processing},
+    volume = {17},
+    number = {1},
+    pages = {199--205},
+    year = {2023},
+    publisher = {Springer}
+}
+
+@article{dong2023hybrid,
+    title = {A hybrid spatial--temporal deep learning architecture for lane detection},
+    author = {Dong, Yongqi and Patil, Sandeep and van Arem, Bart and Farah, Haneen},
+    journal = {Computer-Aided Civil and Infrastructure Engineering},
+    volume = {38},
+    number = {1},
+    pages = {67--86},
+    year = {2023},
+    publisher = {Wiley Online Library}
+}
+
+@article{chen2023improving,
+    title = {Improving lane detection with adaptive homography prediction},
+    author = {Chen, Yiman and Xiang, Zhiyu and Du, Wentao},
+    journal = {The Visual Computer},
+    volume = {39},
+    number = {2},
+    pages = {581--595},
+    year = {2023},
+    publisher = {Springer}
+}
+
+% ccf-b
+@article{yang2023lane,
+    title = {Lane Detection with Versatile AtrousFormer and Local Semantic Guidance},
+    author = {Yang, Jiaxing and Zhang, Lihe and Lu, Huchuan},
+    journal = {Pattern Recognition},
+    volume = {133},
+    pages = {109053},
+    year = {2023},
+    publisher = {Elsevier}
+}
+
+@inproceedings{xu2022rclane,
+    title = {RCLane: Relay chain prediction for lane detection},
+    author = {Xu, Shenghua and Cai, Xinyue and Zhao, Bin and Zhang, Li and Xu, Hang and Fu, Yanwei and Xue, Xiangyang},
+    booktitle = {European Conference on Computer Vision},
+    pages = {461--477},
+    year = {2022},
+    organization = {Springer}
+}
+
+@inproceedings{wang2022keypoint,
+    title = {A keypoint-based global association network for lane detection},
+    author = {Wang, Jinsheng and Ma, Yinchao and Huang, Shaofei and Hui, Tianrui and Wang, Fei and Qian, Chen and Zhang, Tianzhu},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+    pages = {1392--1401},
+    year = {2022}
+}
+
+@inproceedings{zheng2022clrnet,
+    title = {Clrnet: Cross layer refinement network for lane detection},
+    author = {Zheng, Tu and Huang, Yifei and Liu, Yang and Tang, Wenjian and Yang, Zheng and Cai, Deng and He, Xiaofei},
+    booktitle = {Proceedings of the IEEE/CVF conference on computer vision and pattern recognition},
+    pages = {898--907},
+    year = {2022}
+}
+
+% ccfa
+@inproceedings{jin2022eigenlanes,
+    title = {Eigenlanes: Data-driven lane descriptors for structurally diverse lanes},
+    author = {Jin, Dongkwon and Park, Wonhui and Jeong, Seong-Gyun and Kwon, Heeyeon and Kim, Chang-Su},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+    pages = {17163--17171},
+    year = {2022}
+}
+
+@inproceedings{liu2021end,
+    title = {End-to-end lane shape prediction with transformers},
+    author = {Liu, Ruijin and Yuan, Zejian and Liu, Tie and Xiong, Zhiliang},
+    booktitle = {Proceedings of the IEEE/CVF winter conference on applications of computer vision},
+    pages = {3694--3702},
+    year = {2021}
+}
+
+@inproceedings{tabelini2021keep,
+    title = {Keep your eyes on the lane: Real-time attention-guided lane detection},
+    author = {Tabelini, Lucas and Berriel, Rodrigo and Paixao, Thiago M and Badue, Claudine and De Souza, Alberto F and Oliveira-Santos, Thiago},
+    booktitle = {Proceedings of the IEEE/CVF conference on computer vision and pattern recognition},
+    pages = {294--302},
+    year = {2021}
+}
+
+@article{su2021structure,
+    title = {Structure guided lane detection},
+    author = {Su, Jinming and Chen, Chao and Zhang, Ke and Luo, Junfeng and Wei, Xiaoming and Wei, Xiaolin},
+    journal = {arXiv preprint arXiv:2105.05403},
+    year = {2021}
+}
+
+@inproceedings{cordts2016cityscapes,
+    title = {The cityscapes dataset for semantic urban scene understanding},
+    author = {Cordts, Marius and Omran, Mohamed and Ramos, Sebastian and Rehfeld, Timo and Enzweiler, Markus and Benenson, Rodrigo and Franke, Uwe and Roth, Stefan and Schiele, Bernt},
+    booktitle = {Proceedings of the IEEE conference on computer vision and pattern recognition},
+    pages = {3213--3223},
+    year = {2016}
+}
+
+@inproceedings{lin2017feature,
+    title = {Feature pyramid networks for object detection},
+    author = {Lin, Tsung-Yi and Doll{\'a}r, Piotr and Girshick, Ross and He, Kaiming and Hariharan, Bharath and Belongie, Serge},
+    booktitle = {Proceedings of the IEEE conference on computer vision and pattern recognition},
+    pages = {2117--2125},
+    year = {2017}
+}
+
+@inproceedings{neven2018towards,
+    title = {Towards end-to-end lane detection: an instance segmentation approach},
+    author = {Neven, Davy and De Brabandere, Bert and Georgoulis, Stamatios and Proesmans, Marc and Van Gool, Luc},
+    booktitle = {2018 IEEE intelligent vehicles symposium (IV)},
+    pages = {286--291},
+    year = {2018},
+    organization = {IEEE}
+}
+
+@inproceedings{bai2018deep,
+    title = {Deep multi-sensor lane detection},
+    author = {Bai, Min and Mattyus, Gellert and Homayounfar, Namdar and Wang, Shenlong and Lakshmikanth, Shrinidhi Kowshika and Urtasun, Raquel},
+    booktitle = {2018 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+    pages = {3102--3109},
+    year = {2018},
+    organization = {IEEE}
+}
+
+@article{efrat20203d,
+    title = {3d-lanenet+: Anchor free lane detection using a semi-local representation},
+    author = {Efrat, Netalee and Bluvstein, Max and Oron, Shaul and Levi, Dan and Garnett, Noa and Shlomo, Bat El},
+    journal = {arXiv preprint arXiv:2011.01535},
+    year = {2020}
+}
+
+% ccfa
+@inproceedings{hou2019learning,
+    title = {Learning lightweight lane detection cnns by self attention distillation},
+    author = {Hou, Yuenan and Ma, Zheng and Liu, Chunxiao and Loy, Chen Change},
+    booktitle = {Proceedings of the IEEE/CVF international conference on computer vision},
+    pages = {1013--1021},
+    year = {2019}
+}
+
+@article{srivastava2014improved,
+    title = {Improved lane detection using hybrid median filter and modified Hough transform},
+    author = {Srivastava, Sukriti and Lumb, Manisha and Singal, Ritika},
+    journal = {Int. J. Adv. Res. Comput. Sci. Softw. Eng},
+    volume = {4},
+    number = {1},
+    pages = {30--37},
+    year = {2014}
+}
+
+@inproceedings{chanawangsa2012new,
+    title = {A new color-based lane detection via Gaussian radial basis function networks},
+    author = {Chanawangsa, Panya and Chen, Chang Wen},
+    booktitle = {2012 International Conference on Connected Vehicles and Expo (ICCVE)},
+    pages = {166--171},
+    year = {2012},
+    organization = {IEEE}
+}
+
+@inproceedings{zhou2010novel,
+    title = {A novel lane detection based on geometrical model and gabor filter},
+    author = {Zhou, Shengyan and Jiang, Yanhua and Xi, Junqiang and Gong, Jianwei and Xiong, Guangming and Chen, Huiyan},
+    booktitle = {2010 IEEE Intelligent Vehicles Symposium},
+    pages = {59--64},
+    year = {2010},
+    organization = {IEEE}
+}
+
+% ccfb
+@article{kim2008robust,
+    title = {Robust lane detection and tracking in challenging scenarios},
+    author = {Kim, ZuWhan},
+    journal = {IEEE Transactions on intelligent transportation systems},
+    volume = {9},
+    number = {1},
+    pages = {16--26},
+    year = {2008},
+    publisher = {IEEE}
+}
+
+@inproceedings{aly2008real,
+    title = {Real time detection of lane markers in urban streets},
+    author = {Aly, Mohamed},
+    booktitle = {2008 IEEE intelligent vehicles symposium},
+    pages = {7--12},
+    year = {2008},
+    organization = {IEEE}
+}
+
+% ccfb
+@article{he2004color,
+    title = {Color-based road detection in urban traffic scenes},
+    author = {He, Yinghua and Wang, Hong and Zhang, Bo},
+    journal = {IEEE Transactions on intelligent transportation systems},
+    volume = {5},
+    number = {4},
+    pages = {309--318},
+    year = {2004},
+    publisher = {IEEE}
+}
+
+% ccf-c
+@article{wang2004lane,
+    title = {Lane detection and tracking using B-Snake},
+    author = {Wang, Yue and Teoh, Eam Khwang and Shen, Dinggang},
+    journal = {Image and Vision computing},
+    volume = {22},
+    number = {4},
+    pages = {269--280},
+    year = {2004},
+    publisher = {Elsevier}
+}
+
+% ccfa
+@inproceedings{pan2018spatial,
+    title = {Spatial as deep: Spatial cnn for traffic scene understanding},
+    author = {Pan, Xingang and Shi, Jianping and Luo, Ping and Wang, Xiaogang and Tang, Xiaoou},
+    booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+    volume = {32},
+    year = {2018}
+}
+
+@inproceedings{zheng2021resa,
+    title = {Resa: Recurrent feature-shift aggregator for lane detection},
+    author = {Zheng, Tu and Fang, Hao and Zhang, Yi and Tang, Wenjian and Yang, Zheng and Liu, Haifeng and Cai, Deng},
+    booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+    volume = {35},
+    pages = {3547--3554},
+    year = {2021}
+}
+
+@article{li2021hdmapnet,
+    title = {Hdmapnet: A local semantic map learning and evaluation framework},
+    author = {Li, Qi and Wang, Yue and Wang, Yilun and Zhao, Hang},
+    journal = {arXiv preprint arXiv:2107.06307},
+    year = {2021}
+}
+
+@inproceedings{qin2020ultra,
+    title = {Ultra fast structure-aware deep lane detection},
+    author = {Qin, Zequn and Wang, Huanyu and Li, Xi},
+    booktitle = {European Conference on Computer Vision},
+    pages = {276--291},
+    year = {2020},
+    organization = {Springer}
+}
+
+@inproceedings{liu2021condlanenet,
+    title = {Condlanenet: a top-to-down lane detection framework based on conditional convolution},
+    author = {Liu, Lizhe and Chen, Xiaohao and Zhu, Siyu and Tan, Ping},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision},
+    pages = {3773--3782},
+    year = {2021}
+}
+
+@inproceedings{yoo2020end,
+    title = {End-to-end lane marker detection via row-wise classification},
+    author = {Yoo, Seungwoo and Lee, Hee Seok and Myeong, Heesoo and Yun, Sungrack and Park, Hyoungwoo and Cho, Janghoon and Kim, Duck Hoon},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops},
+    pages = {1006-1007},
+    year = {2020}
+}
+
+@article{li2019line,
+    title = {Line-cnn: End-to-end traffic line detection with line proposal unit},
+    author = {Li, Xiang and Li, Jun and Hu, Xiaolin and Yang, Jian},
+    journal = {IEEE Transactions on Intelligent Transportation Systems},
+    volume = {21},
+    number = {1},
+    pages = {248--258},
+    year = {2019},
+    publisher = {IEEE}
+}
+
+@inproceedings{feng2022rethinking,
+    title = {Rethinking Efficient Lane Detection via Curve Modeling},
+    author = {Feng, Zhengyang and Guo, Shaohua and Tan, Xin and Xu, Ke and Wang, Min and Ma, Lizhuang},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+    pages = {17062--17070},
+    year = {2022}
+}
+
+% ccfc
+@inproceedings{tabelini2021polylanenet,
+    title = {Polylanenet: Lane estimation via deep polynomial regression},
+    author = {Tabelini, Lucas and Berriel, Rodrigo and Paixao, Thiago M and Badue, Claudine and De Souza, Alberto F and Oliveira-Santos, Thiago},
+    booktitle = {2020 25th International Conference on Pattern Recognition (ICPR)},
+    pages = {6150--6156},
+    year = {2021},
+    organization = {IEEE}
+}
+
+%endregion 2D lane detection
+
+%region 3D Lane Detection
+
+@inproceedings{huang2023anchor3dlane,
+    title = {Anchor3dlane: Learning to regress 3d anchors for monocular 3d lane detection},
+    author = {Huang, Shaofei and Shen, Zhenwei and Huang, Zehao and Ding, Zi-han and Dai, Jiao and Han, Jizhong and Wang, Naiyan and Liu, Si},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+    pages = {17451--17460},
+    year = {2023}
+}
+
+@inproceedings{wang2023bev,
+    title = {BEV-LaneDet: An Efficient 3D Lane Detection Based on Virtual Camera via Key-Points},
+    author = {Wang, Ruihao and Qin, Jian and Li, Kaiying and Li, Yaochen and Cao, Dong and Xu, Jintao},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+    pages = {1002--1011},
+    year = {2023}
+}
+
+@article{luo2022m,
+  title={M\^{} 2-3DLaneNet: Multi-Modal 3D Lane Detection},
+  author={Luo, Yueru and Yan, Xu and Zheng, Chaoda and Zheng, Chao and Mei, Shuqi and Kun, Tang and Cui, Shuguang and Li, Zhen},
+  journal={arXiv preprint arXiv:2209.05996},
+  year={2022}
+}
+
+@inproceedings{yan2022once,
+    title = {Once-3dlanes: Building monocular 3d lane detection},
+    author = {Yan, Fan and Nie, Ming and Cai, Xinyue and Han, Jianhua and Xu, Hang and Yang, Zhen and Ye, Chaoqiang and Fu, Yanwei and Mi, Michael Bi and Zhang, Li},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+    pages = {17143--17152},
+    year = {2022}
+}
+
+@inproceedings{garnett20193d,
+    title = {3d-lanenet: end-to-end 3d multiple lane detection},
+    author = {Garnett, Noa and Cohen, Rafi and Pe'er, Tomer and Lahav, Roee and Levi, Dan},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision},
+    pages = {2921--2930},
+    year = {2019}
+}
+
+@inproceedings{guo2020gen,
+    title = {Gen-lanenet: A generalized and scalable approach for 3d lane detection},
+    author = {Guo, Yuliang and Chen, Guang and Zhao, Peitao and Zhang, Weide and Miao, Jinghao and Wang, Jingao and Choe, Tae Eun},
+    booktitle = {ECCV},
+    year = {2018}
+}
+
+@inproceedings{li2022reconstruct,
+    title = {Reconstruct From Top View: A 3D Lane Detection Approach Based on Geometry Structure Prior},
+    author = {Li, Chenguang and Shi, Jia and Wang, Ya and Cheng, Guangliang},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+    pages = {4370--4379},
+    year = {2022}
+}
+
+@article{chen2022persformer,
+    title = {PersFormer: 3D Lane Detection via Perspective Transformer and the OpenLane Benchmark},
+    author = {Chen, Li and Sima, Chonghao and Li, Yang and Zheng, Zehan and Xu, Jiajie and Geng, Xiangwei and Li, Hongyang and He, Conghui and Shi, Jianping and Qiao, Yu and others},
+    journal = {arXiv preprint arXiv:2203.11089},
+    year = {2022}
+}
+
+@article{jaderberg2015spatial,
+    title = {Spatial transformer networks},
+    author = {Jaderberg, Max and Simonyan, Karen and Zisserman, Andrew and others},
+    journal = {Advances in neural information processing systems},
+    volume = {28},
+    year = {2015}
+}
+
+@inproceedings{philion2020lift,
+    title = {Lift, splat, shoot: Encoding images from arbitrary camera rigs by implicitly unprojecting to 3d},
+    author = {Philion, Jonah and Fidler, Sanja},
+    booktitle = {European Conference on Computer Vision},
+    pages = {194--210},
+    year = {2020},
+    organization = {Springer}
+}
+
+@article{detone2016deep,
+    title = {Deep image homography estimation},
+    author = {DeTone, Daniel and Malisiewicz, Tomasz and Rabinovich, Andrew},
+    journal = {arXiv preprint arXiv:1606.03798},
+    year = {2016}
+}
+
+@article{chen2017deeplab,
+    title = {Deeplab: Semantic image segmentation with deep convolutional nets, atrous convolution, and fully connected crfs},
+    author = {Chen, Liang-Chieh and Papandreou, George and Kokkinos, Iasonas and Murphy, Kevin and Yuille, Alan L},
+    journal = {IEEE transactions on pattern analysis and machine intelligence},
+    volume = {40},
+    number = {4},
+    pages = {834--848},
+    year = {2017},
+    publisher = {IEEE}
+}
+
+@inproceedings{redmon2016you,
+    title = {You only look once: Unified, real-time object detection},
+    author = {Redmon, Joseph and Divvala, Santosh and Girshick, Ross and Farhadi, Ali},
+    booktitle = {Proceedings of the IEEE conference on computer vision and pattern recognition},
+    pages = {779--788},
+    year = {2016}
+}
+
+@inproceedings{tian2019fcos,
+    title = {Fcos: Fully convolutional one-stage object detection},
+    author = {Tian, Zhi and Shen, Chunhua and Chen, Hao and He, Tong},
+    booktitle = {Proceedings of the IEEE/CVF international conference on computer vision},
+    pages = {9627--9636},
+    year = {2019}
+}
+
+@article{zhou2019objects,
+    title = {Objects as points},
+    author = {Zhou, Xingyi and Wang, Dequan and Kr{\"a}henb{\"u}hl, Philipp},
+    journal = {arXiv preprint arXiv:1904.07850},
+    year = {2019}
+}
+
+@article{ko2021key,
+    title = {Key points estimation and point instance segmentation approach for lane detection},
+    author = {Ko, Yeongmin and Lee, Younkwan and Azam, Shoaib and Munir, Farzeen and Jeon, Moongu and Pedrycz, Witold},
+    journal = {IEEE Transactions on Intelligent Transportation Systems},
+    year = {2021},
+    publisher = {IEEE}
+}
+
+@inproceedings{qu2021focus,
+    title = {Focus on local: Detecting lane marker from bottom up via key point},
+    author = {Qu, Zhan and Jin, Huan and Zhou, Yang and Yang, Zhen and Zhang, Wei},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+    pages = {14122--14130},
+    year = {2021}
+}
+
+@article{wang2022bev,
+    title = {Bev lane det: Fast lane detection on bev ground},
+    author = {Wang, Ruihao and Qin, Jian and Li, Kaiying and Cao, Dong},
+    journal = {arXiv preprint arXiv:2210.06006},
+    year = {2022}
+}
+
+%endregion 3D Lane Detection
+
+%region spatial transform
+
+@inproceedings{he2016accurate,
+    title = {Accurate and robust lane detection based on dual-view convolutional neutral network},
+    author = {He, Bei and Ai, Rui and Yan, Yang and Lang, Xianpeng},
+    booktitle = {2016 IEEE intelligent vehicles symposium (IV)},
+    pages = {1041--1046},
+    year = {2016},
+    organization = {IEEE}
+}
+
+@inproceedings{loose2009kalman,
+    title = {Kalman particle filter for lane recognition on rural roads},
+    author = {Loose, Heidi and Franke, Uwe and Stiller, Christoph},
+    booktitle = {2009 IEEE intelligent vehicles symposium},
+    pages = {60--65},
+    year = {2009},
+    organization = {IEEE}
+}
+
+@inproceedings{bruls2019right,
+    title = {The right (angled) perspective: Improving the understanding of road scenes using boosted inverse perspective mapping},
+    author = {Bruls, Tom and Porav, Horia and Kunze, Lars and Newman, Paul},
+    booktitle = {2019 IEEE Intelligent Vehicles Symposium (IV)},
+    pages = {302--309},
+    year = {2019},
+    organization = {IEEE}
+}
+
+
+%endregion spatial transform
+
+%region other
+%resnet
+
+@inproceedings{he2016deep,
+    title = {Deep residual learning for image recognition},
+    author = {He, Kaiming and Zhang, Xiangyu and Ren, Shaoqing and Sun, Jian},
+    booktitle = {Proceedings of the IEEE conference on computer vision and pattern recognition},
+    pages = {770--778},
+    year = {2016}
+}
+
+@article{homographies,
+    title = {Parameterizing homographies},
+    author = {Baker, Simon and Datta, Ankur and Kanade, Takeo},
+    journal = {Robotics Institute, Pittsburgh, PA, Tech. Rep. CMU-RI-TR-06-11},
+    year = {2006}
+}
+
+%vpn
+
+@article{pan2020cross,
+    title = {Cross-view semantic segmentation for sensing surroundings},
+    author = {Pan, Bowen and Sun, Jiankai and Leung, Ho Yin Tiga and Andonian, Alex and Zhou, Bolei},
+    journal = {IEEE Robotics and Automation Letters},
+    volume = {5},
+    number = {3},
+    pages = {4867--4873},
+    year = {2020},
+    publisher = {IEEE}
+}
+
+%
+
+@article{de2017semantic,
+    title = {Semantic instance segmentation with a discriminative loss function},
+    author = {De Brabandere, Bert and Neven, Davy and Van Gool, Luc},
+    journal = {arXiv preprint arXiv:1708.02551},
+    year = {2017}
+}
+
+%genlanenet++
+
+@inproceedings{jin2021robust,
+    title = {Robust monocular 3d lane detection with dual attention},
+    author = {Jin, Yujie and Ren, Xiangxuan and Chen, Fengxiang and Zhang, Weidong},
+    booktitle = {2021 IEEE International Conference on Image Processing (ICIP)},
+    pages = {3348--3352},
+    year = {2021},
+    organization = {IEEE}
+}
+
+%CLGO
+
+@inproceedings{liu2022learning,
+    title = {Learning to predict 3d lane shape and camera pose from a single image via geometry constraints},
+    author = {Liu, Ruijin and Chen, Dapeng and Liu, Tie and Xiong, Zhiliang and Yuan, Zejian},
+    booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+    volume = {36},
+    number = {2},
+    pages = {1765--1772},
+    year = {2022}
+}
+
+%spatial transform
+
+@inproceedings{reiher2020sim2real,
+    title = {A sim2real deep learning approach for the transformation of images from multiple vehicle-mounted cameras to a semantically segmented image in bird’s eye view},
+    author = {Reiher, Lennart and Lampe, Bastian and Eckstein, Lutz},
+    booktitle = {2020 IEEE 23rd International Conference on Intelligent Transportation Systems (ITSC)},
+    pages = {1--7},
+    year = {2020},
+    organization = {IEEE}
+}
+
+@article{li2022bevformer,
+    title = {BEVFormer: Learning Bird's-Eye-View Representation from Multi-Camera Images via Spatiotemporal Transformers},
+    author = {Li, Zhiqi and Wang, Wenhai and Li, Hongyang and Xie, Enze and Sima, Chonghao and Lu, Tong and Yu, Qiao and Dai, Jifeng},
+    journal = {arXiv preprint arXiv:2203.17270},
+    year = {2022}
+}
+
+@article{huang2021bevdet,
+    title = {Bevdet: High-performance multi-camera 3d object detection in bird-eye-view},
+    author = {Huang, Junjie and Huang, Guan and Zhu, Zheng and Du, Dalong},
+    journal = {arXiv preprint arXiv:2112.11790},
+    year = {2021}
+}
+
+%transformer
+
+@article{vaswani2017attention,
+    title = {Attention is all you need},
+    author = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, {\L}ukasz and Polosukhin, Illia},
+    journal = {Advances in neural information processing systems},
+    volume = {30},
+    year = {2017}
+}
+
+%%%%%%%%%%%rebutal
+
+@article{xu2022csboundary,
+    title = {csboundary: City-scale road-boundary detection in aerial images for high-definition maps},
+    author = {Xu, Zhenhua},
+    journal = {IEEE Robotics and Automation Letters},
+    volume = {7},
+    number = {2},
+    pages = {5063--5070},
+    year = {2022},
+    publisher = {IEEE}
+}
+
+@article{liu2022vectormapnet,
+    title = {VectorMapNet: End-to-end Vectorized HD Map Learning},
+    author = {Liu, Yicheng},
+    journal = {arXiv preprint arXiv:2206.08920},
+    year = {2022}
+}
+%endregion other
+
+
+% added by houzm
+
+@inproceedings{tang2022image,
+  title={An image patch is a wave: Phase-aware vision mlp},
+  author={Tang, Yehui and Han, Kai and Guo, Jianyuan and Xu, Chang and Li, Yanxi and Xu, Chao and Wang, Yunhe},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={10935--10944},
+  year={2022}
+}
+
+@article{kingma2014adam,
+  title={Adam: A method for stochastic optimization},
+  author={Kingma, Diederik P and Ba, Jimmy},
+  journal={arXiv preprint arXiv:1412.6980},
+  year={2014}
+}
+
+@inproceedings{zhou2018voxelnet,
+  title={Voxelnet: End-to-end learning for point cloud based 3d object detection},
+  author={Zhou, Yin and Tuzel, Oncel},
+  booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition},
+  pages={4490--4499},
+  year={2018}
+}
+@inproceedings{lang2019pointpillars,
+  title={Pointpillars: Fast encoders for object detection from point clouds},
+  author={Lang, Alex H and Vora, Sourabh and Caesar, Holger and Zhou, Lubing and Yang, Jiong and Beijbom, Oscar},
+  booktitle={Proceedings of the IEEE/CVF conference on computer vision and pattern recognition},
+  pages={12697--12705},
+  year={2019}
+}

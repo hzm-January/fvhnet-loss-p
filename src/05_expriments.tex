@@ -1,12 +1,12 @@
 \section{Expriments}
 
-\begin{table*}[!ht]
-    \caption{Comparison with previous methods on Apollo 3D Lane Synthetic Dataset.}\label{tab:table1}
+\begin{table*}[ht]
+    \caption{Comparison with previous methods on Apollo 3D Lane Synthetic Dataset.}\label{tab:Comparision table}
     \center
 %    \resizebox{1\linewidth}{!}{ % 表格环境外部设置（头）
     \begin{tabular}{ccccccc}% 其中，tabular是表格内容的环境；c表示centering，即文本格式居中；c的个数代表列的个数
         \toprule %[2pt]设置线宽
-        Scene Method & F-Score & X error near & X error far & Z error near & Z error far \\
+        Scene & Method & F-Score & X error near & X error far & Z error near & Z error far \\
         \toprule %[2pt]设置线宽
         \multirow{2}{*}{Balanced Scence} & 3D-LaneNet [8] & 86.4 & 0.068 & 0.477 & 0.015 & \textbf{0.202} \\ %换行
         \multirow{2}{*}{ }               & Gen-LaneNet [9] & 88.1 & 0.061 & 0.496 & 0.012 & 0.214  \\
@@ -14,8 +14,8 @@
         \multirow{2}{*}{ }               & Gen-LaneNet(1/att) [13] & 90.3 & 0.08 & 0.473 & 0.011 & 0.247  \\
         %\multirow{2}{*}{ }               & CLGO [19] & 91.9 & 0.061 & 0.361 & 0.029 & 0.25  \\
         %\multirow{2}{*}{ }               & Reconstruct from Top [14] & 91.9 & 0.049 & 0.387 & \textbf{0.008} & 0.213  \\
-        \multirow{2}{*}{ }               & PersFormer [3] & 92.9 & 0.054 & 0.356 & 0.01  & 0.234 \\
-        \multirow{2}{*}{ }               & Ours       & \textbf{97.2} & \textbf{0.033} & \textbf{0.273} & 0.044 & 0.263 \\
+        \multirow{2}{*}{ }               & PersFormer [3] & 92.9 & 0.054 & 0.356 & \textbf{0.010}  & 0.234 \\
+        \multirow{2}{*}{ }               & Ours       & \textbf{97.2} & \textbf{0.033} & \textbf{0.273} & \textbf{0.044} & \textbf{0.263} \\
         \midrule %[2pt]
         \multirow{2}{*}{Rarely Observed} & 3D-LaneNet [8] & 72 & 0.166 & 0.855 & 0.039 & \textbf{0.521} \\
         \multirow{2}{*}{ }               & Gen-LaneNet [9] & 78 & 0.139 & 0.903 & 0.03 & 0.539  \\
@@ -23,43 +23,32 @@
         \multirow{2}{*}{ }               & Gen-LaneNet(1/att) [13] & 81.7 & 0.283 & 0.915 & 0.028 & 0.653  \\
         %\multirow{2}{*}{ }               & CLGo [19] & 86.1 & 0.147 & 0.735 & 0.071 & 0.609  \\
         %\multirow{2}{*}{ }               & Reconstruct from Top [14] & 83.7 & 0.126 & 0.903 & \textbf{0.023} & 0.625  \\
-        \multirow{2}{*}{ }               & PersFormer [3] & 87.5 & 0.107 & 0.782 & 0.024 & 0.602 \\
-        \multirow{2}{*}{ }               & Ours       & \textbf{95.5} & \textbf{0.059} & \textbf{0.646} & 0.090 & 0.685 \\
+        \multirow{2}{*}{ }               & PersFormer [3] & 87.5 & 0.107 & 0.782 & \textbf{0.024} & 0.602 \\
+        \multirow{2}{*}{ }               & Ours       & \textbf{95.5} & \textbf{0.059} & \textbf{0.646} & \textbf{0.090} & \textbf{0.685} \\
         \midrule %[2pt]
         \multirow{2}{*}{Vivual Variants} & 3D-LaneNet [8] & 72.5 & 0.115 & 0.601 & 0.032 & \textbf{0.23}  \\
-        \multirow{2}{*}{ }               & Gen-LaneNet [9] & 85.3 & 0.074 & 0.538 & 0.015 & 0.232  \\
+        \multirow{2}{*}{ }               & Gen-LaneNet [9] & 85.3 & 0.074 & 0.538 & \textbf{0.015} & 0.232  \\
         \multirow{2}{*}{ }               & 3D-laneNet(1/att) [13] & 85.4 & 0.118 & 0.559 & 0.018 & 0.29  \\
         \multirow{2}{*}{ }               & Gen-LaneNet(1/att) [13] & 86.8 & 0.104 & 0.544 & 0.016 & 0.294  \\
         %\multirow{2}{*}{ }               & CLGo [19]  & 87.3  & 0.084  & 0.464  & 0.045  & 0.312  \\
        % \multirow{2}{*}{ }               & Reconstruct from Top [14]  & 89.9  & 0.06  & 0.446  & \textbf{0.011}  & 0.235  \\
-        \multirow{2}{*}{ }               & PersFormer [3] & 89.6 & 0.074 & 0.43  & 0.015 & 0.266 \\
-        \multirow{2}{*}{ }               & Ours       & \textbf{94.3} &\textbf{ 0.051} & \textbf{0.389} & 0.043 & 0.307 \\
+        \multirow{2}{*}{ }               & PersFormer [3] & 89.6 & 0.074 & 0.43  & \textbf{0.015} & 0.266 \\
+        \multirow{2}{*}{ }               & Ours       & \textbf{94.3} &\textbf{ 0.051} & \textbf{0.389} & \textbf{0.043} & \textbf{0.307} \\
         \bottomrule %[2pt]
     \end{tabular}
 %    }% 外部环境设置（尾）
 \end{table*}
 
-\subsection{Dataset And Experimental Setup}
-\label{subsec:Dataset And Experimental Setup}
-%OpenLane contains 150,000 training frames and 40,000 test frames.
-%In order to verify the performance of the model for every scene, the Up\&Down case, Curve case, Extreme Weather case,
-%Intersection case, Merge\&Split case, and Night case are separated from the validation set.
+\subsection{Dataset}
+\label{subsec:Dataset}
 
-\textbf {apollo 3D Lane Synthetic Dataset}. Apollo Synthetic
+\textbf {Apollo 3D Lane Synthetic Dataset}. Apollo Synthetic
 dataset \cite{guo2020gen} consists of over 10k 1080 × 1920 images which
 are built using unity 3D engine, including highway, urban,
 residential and downtown environments. The dataset is split
 into three different scenes: balanced scenes, rarely observed
 scenes and scenes with visual variations for evaluating algorithms from different perspectives.
-
-\textbf {OpenLane Dataset}. OpenLane Dataset \cite{chen2022persformer} is the first
-real world 3D lane dataset which consists of over 200K
-frames at a frequency of 10 FPS based on Waymo Open
-dataset [32], [33]. In total, it has a training set with 157k
-images and a validation set of 39k images. The dataset
-provides camera intrisics and extrinsics following the same
-data format as Waymo Open Dataset.
-
+Each scene contains independent training sets and test sets.
 
 \subsection{Experiment Settings}
 \label{subsec:Experiment Settings}
@@ -68,7 +57,8 @@ The resolution of our input image is 576 × 1024.
 The bev range is set to [3, 103] × [-12, 12] along x and y respectively.
 Each cell represents x × x (x defaults to 0.5m).
 Our network uses Adam optimizer \cite{kingma2014adam}, with a base learning rate of $10^{-3}$ and weight decay of $10^{-2}$.
-All models are trained from scratch with 120 epochs and the per-GPU batch size is set to 8.
+All models are trained from scratch with 200 epochs and the per-GPU batch size is set to 16.
+All results are tested on four RTX A4000 platform.
 
 \subsection{Evaluation}
 \label{subsec:Evaluation}
@@ -76,3 +66,7 @@ The evaluation metrics we used are referred from Gen-LaneNet \cite{guo2020gen}, 
 We report Average Precision (AP) , Fscore, and errors (near range and far range) to investigate the performance of our model.
 
 \subsection{Comparisons with existing methods}
+To best show our performance, we also compare with other state-of-the-art methods 3D-LaneNet \cite{garnett20193d}, Gen-LaneNet \cite{guo2020gen}, PersFormer \cite{chen2022persformer}.
+As shown in \ref{tab:Comparision table}
+The proposed method was trained using both Apollo 3D Lane Synthetic Dataset training and validation set as previous works did.
+Compared with other approaches, our method achieves competitive F-Score and lowest X error.

@@ -1,54 +1,51 @@
-% CVPR 2022 Paper Template
-% based on the CVPR template provided by Ming-Ming Cheng (https://github.com/MCG-NKU/CVPR_Template)
-% modified and extended by Stefan Roth (stefan.roth@NOSPAMtu-darmstadt.de)
-
-\documentclass[10pt,twocolumn,letterpaper]{article}
-
-%%%%%%%%% PAPER TYPE  - PLEASE UPDATE FOR FINAL VERSION
-% \usepackage[review]{cvpr}      % To produce the REVIEW version
-%\usepackage{package/IEEE}              % To produce the CAMERA-READY version
-\usepackage{package/cvpr}              % To produce the CAMERA-READY version
-%\usepackage[pagenumbers]{cvpr} % To force page numbers, e.g. for an arXiv version
-
-% Include other packages here, before hyperref.
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
 \usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{booktabs}
-\usepackage{multicol}
-\usepackage{multirow}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
-% It is strongly recommended to use hyperref, especially for the review version.
-% hyperref with option pagebackref eases the reviewers' job.
-% Please disable hyperref *only* if you encounter grave issues, e.g. with the
-% file validation for the camera-ready version.
-%
-% If you comment hyperref and then uncomment it, you should delete
-% ReviewTempalte.aux before re-running LaTeX.
-% (Or just hit 'q' on the first LaTeX run, let it finish, and you
-%  should be clear).
-\usepackage[pagebackref,breaklinks,colorlinks]{hyperref}
+%\documentclass[conference,a4paper]{IEEEtran}					%导入IEEEtran的A4格式模板
+%\usepackage[inner=0.9055in,outer=0.5118in,top=0.5in]{geometry}	%左边距inner，右边距outer，上边距top
 
+\usepackage{amsmath}			%数学公式包
+\allowdisplaybreaks[3] 			%导入数学公式包的前提下，允许跨页，1，2，3，4表示允许程度，但equation环境不可换页
+								%长公式跨页可用align公式
+\usepackage{bbm} 				%粗体、双线体
+\usepackage{multirow} 			%纵向合并单元格
+\usepackage{booktabs} 			%三线表
+\usepackage{color}
+\usepackage{amssymb}			%数学定理和证明过程包
+\let\labelindent\relax
+\usepackage{enumitem}			%调整垂直/水平间距/标签样式
 
-% Support for easy cross-referencing
-\usepackage[capitalize]{cleveref}
-\crefname{section}{Sec.}{Secs.}
-\Crefname{section}{Section}{Sections}
-\Crefname{table}{Table}{Tables}
-\crefname{table}{Tab.}{Tabs.}
+\usepackage{amsthm}								%定理环境
+\newtheorem{ownlemma}{Lemma} 					%引理。定理将两个lemma改为theorem 即可
+\newtheorem{owncorollary}{Corollary}			%推论
+\newtheorem{owndefinition}{Definition} 			%定义
+\newtheorem{ownproperty}{Property} 				%性质
 
-%%%%%%%%% PAPER ID  - PLEASE UPDATE
-% \def\cvprPaperID{*****} % *** Enter the CVPR Paper ID here
-% \def\confName{CVPR}
-% \def\confYear{2022}
+\usepackage{algorithm} 							%代码环境
+\usepackage[noend]{algpseudocode}				%伪代码中 类似 if...end if去掉end if语句
+\renewcommand{\algorithmicrequire}{Input:}
+\renewcommand{\algorithmicensure}{Output:}
+\renewcommand{\algorithmiccomment}[1]{// #1}	%C语言的注释格式
 
+\bibliographystyle{IEEEtran}					%引用文献格式
+\usepackage[numbers, sort & compress]{natbib} 	%压缩引用序号
+\usepackage{hyperref}                           %引用链接
+\usepackage{soul}   			%高亮显示，为提高本文可读性而添加，实际论文不需要该包
 
 \begin{document}
 
 %%%%%%%%% TITLE - PLEASE UPDATE
-\title{A Fast Lane Detection Method Based on Single View Virtual Plane}
-
-\author{Zhiming Hou, Yuanzhouhan Cao, Jing Ye}
+\title{FVHNet: Homography Matrix Estimation for Virtual Camera}
+\author{Zhiming Hou, Yuanzhouhan Cao\textsuperscript{*}\thanks{\hrule \vspace{10pt} This work is supported by Beijing Natural Science Foundation (L221011). Yuanzhouhan Cao is the corresponding author.}}
 %-------------------------------------------------------------------------
 \maketitle
 
@@ -56,9 +53,18 @@
 \begin{abstract}
   \input{src/01_abstract.tex}
 \end{abstract}
-
+\begin{IEEEkeywords}
+Homography, Virtual Camera, 3D Lane Detection.
+\end{IEEEkeywords}
 %%%%%%%%% INTRODUCTION
 \input{src/02_introduction.tex}
+
+%\let\thefootnote\relax\footnotetext{\footnoterule This work is supported by Beijing Natural Science Foundation (L221011).}
+%\vspace*{\fill} % 将acknowledgement置于页面底部
+%\footnoterule % 分隔线
+%\footnotesize
+%\noindent \textbf{Acknowledgement:} This work is supported by Beijing Natural Science Foundation (L221011).
+%\noindent *Corresponding author
 
 %%%%%%%%% RELATED_WORK
 \input{src/03_related_work.tex}
@@ -73,13 +79,14 @@
 \input{src/06_conclusions.tex}
 %-------------------------------------------------------------------------
 
+%%%%%%%%% ACKNOWLEDGEMENT
+%\input{src/07_acknowledgement.tex}
+%-------------------------------------------------------------------------
+
 %%%%%%%%% REFERENCES
-{
-  \small
-  \bibliographystyle{package/ieee_fullname}
-  \bibliography{package/egbib}
-}
-\clearpage
+%\clearpage
+\bibliography{IEEEtran/NameofReference}
+
 %-------------------------------------------------------------------------
 %%%%%%%%% APPENDIX
 %\input{src/07_appendix.tex}
