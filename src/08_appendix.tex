@@ -1,7 +1,67 @@
 \appendix
 \section{Appendix}
 
-appendix
-appendix
-appendix
-appendix
+\subsection{Projectivity}
+\label{subsec:Projectivity}
+A projectivity is an invertible mapping from points in $\mathbb{P}^2$ (that is homogeneous 3-vectors)
+to points in $\mathbb{P}^2$ that maps lines to lines.
+More precisely, a projectivity is an invertible mapping h from $\mathbb{P}^2$ to itself such that three points $x_1$, $x_2$ and $x_3$
+lie on the same line if and only if $h(x_1)$, $h(x_2)$ and $h(x_3)$ do.
+A projectivity is also called a collineation (a helpful name), a projective transformation or a homography: the terms are synonymous.
+An equivalent algebraic definition of a projectivity is possible, based on the following result.
+Conference to Theorem 2.10 \cite{hartley2003multiple}, a mapping h : $\mathbb{P}^2  \rightarrow \mathbb{P}^2$ is a projectivity if and only if there exists a
+non-singular $3 \times 3$ matrix H such that for any point in $\mathbb{P}^2$ represented by a vector $x$ it
+is true that $h(x) = Hx$.
+\subsection{Coordinate Systems In Computer Vision}
+\label{subsec:Coordinate Systems In Computer Vision}
+
+\textbf{World coordinate system (3D)} It is a 3D basic cartesian coordinate system with arbitrary origin.
+A point in this coordinate system can be denoted as $M^w=[X,Y,Z]^T$,
+and the corresponding homogeneous coordinate is $\widetilde{M}^w=[X,Y,Z,1]^T$.
+
+Assuming that there is a plane with coordinate system P in the world coordinate system,
+and the direction of the z-axis of A is the same as the direction of the normal vector of the plane.
+Then a point $m=[X,Y]^T$ on the plane has coordinates $M^p=[X,Y,0]^T$ in P .
+
+\textbf{Camera coordinate system (3D)} It's the coordinate system that measures relative to the object/camera’s origin/orientation.
+The z-axis of the camera coordinate system usually faces outward or inward to
+the camera lens (camera principal axis) as shown in the image above (z-axis facing inward to the camera lens).
+One can go from the world coordinate system to object coordinate system (and vice-versa) by Rotation and Translation operations.
+A point in this coordinate system can be denoted as $M^c=[X,Y,Z]^T$,
+and the corresponding homogeneous coordinate is $\widetilde{M}^c=[X,Y,Z,1]^T$.
+
+
+\textbf{Image coordinate system (2D)} A 2D coordinate system that has the 3D points in the camera
+coordinate system projected onto a 2D plane
+(usually normal to the z-axis of the camera coordinate system) of a camera with a Pinhole Model.
+A point in this coordinate system can be denoted as $m=[x,y]^T$,
+and the corresponding homogeneous coordinate is $\widetilde{m}=[x,y,1]^T$.
+
+\textbf{Pixel coordinate system (2D)} This represents the integer values by discretizing the points in the image coordinate system.
+Pixel coordinates of an image are discrete values within a range
+that can be achieved by dividing the image coordinates by pixel width and height (parameters of the camera — units: meter/pixel).
+A point in this coordinate system can be denoted as $m=[u,v]^T$,
+and the corresponding homogeneous coordinate is $\widetilde{m}=[u,v,1]^T$.
+
+\subsection{Homograph Matrix Between Camera Plane and Physical Plane}
+\label{subsec:Homograph Matrix Between Camera Plane and Physical Plane}
+
+
+\subsection{Homography Matrix Between Two Different Cameras}
+\label{subsec:Homography Matrix Between Two Different Cameras}
+Assume that the camera coordinate system C adopts the RDF camera coordinate system,
+and the XYZ axes are the Right-Down-Front of the camera, respectively.
+The coordinates of points in the camera plane are denoted by $m=[u,v]^T$
+and the corresponding homogeneous coordinates are $\widetilde{m}=[u,v,1]^T$.
+Points in different images are denoted by superscripts, e.g. $m^{c_1}$.
+A three-dimensional point is denoted by a capital $M=[X,Y,Z]^T$,
+and the corresponding chi-square coordinate is $\widetilde{M}=[X,Y,Z,1]^T$,
+and points in different coordinate systems are denoted by superscripts, e.g.
+$M^{c}$ is a point in the camera coordinate system, and $M^{w}$ is a point in the world coordinate system.
+
+Assuming that there is a plane with coordinate system P in the world coordinate system,
+and the direction of the z-axis of A is the same as the direction of the normal vector of the plane.
+Then a point $m=[X,Y]^T$ on the plane has coordinates $M^p=[X,Y,0]^T$ in P .
+
+Assuming that the camera intrinsic matrix is $K$, the extrinsic matrix is $[R|t]$,
+and s is the scale factor, the camera projection model can be expressed as $s\widetilde{m}=K[R|T]\widetilde{M}^w$.
